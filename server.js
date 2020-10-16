@@ -10,7 +10,7 @@ var msgData = [];
 var roomRead = [];
 var roomWrite = [];
 var roomData = [];
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
     res.send('mychat-backend is running');
@@ -93,6 +93,6 @@ io.on('connection', (socket) => {
     });
 });
 
-// http.listen(port, () => {
-//     console.log('listening on *:3000');
-// });
+http.listen(port, () => {
+    console.log('listening on *:8080');
+});
