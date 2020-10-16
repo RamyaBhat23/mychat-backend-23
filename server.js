@@ -17,6 +17,11 @@ app.get('/', (req, res) => {
     res.end();
 });
 
+app.listen(process.env.PORT || 8080, () => {
+    console.log("http://localhost:8080");
+    //https://localhost:8080 doesn't work
+});
+
 function getRooms() {
     roomRead = fs.readFileSync('rooms.json', 'utf-8');
     roomData = JSON.parse(roomRead);
